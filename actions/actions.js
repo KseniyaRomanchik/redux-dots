@@ -25,6 +25,7 @@ function setDotsAction(data) {
 export function setDots(width, height) {
 
 	return (dispatch) => {
+		
 		let dots = DotsService.createDots(width, height);
 
 
