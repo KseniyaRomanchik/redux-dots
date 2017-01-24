@@ -4,15 +4,12 @@ import { Provider } from "react-redux"
 import configureStore from "./store/configureStore"
 import App from "./containers/App"
 
-import * as actions from "../actions/actions"
-actions.
+import * as actions from "./actions/actions"
 
-const store = configureStore()
+const store = configureStore();
+store.dispatch(actions.setDots(10, 8)); //init
 
-
-
-
-store.dispatch(setDots(10, 10)); //init
+// console.log(store.getState())
 
 render(
 	<Provider store={store}>

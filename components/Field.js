@@ -14,7 +14,7 @@ class Field extends Component{
 
 	setSize(){
 
-		this.props.setFieldSize({ width: this.state.width, height: this.state.height })
+		this.props.setDots(this.state.width, this.state.height)
 	}
 
 	render(){
@@ -29,10 +29,9 @@ class Field extends Component{
 	}
 }
 
-// Field.propTypes ={
-
-// 	data: PropTypes.boolean.isRequired,
-// 	setDotState: PropTypes.func.isRequired
-// }
+Field.propTypes = {
+	initialSize: React.PropTypes.object.isRequired,
+	setDots: React.PropTypes.func.isRequired
+}
 
 export default Field

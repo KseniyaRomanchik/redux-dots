@@ -17,7 +17,7 @@ class App extends Component{
 		let field = this.props.dots.dots.map((item, index) => {
 
 			return  (
-				<Dots key={ index } id={item.id} state={item.state} setDotState={this.props.actions.setDotState} /> 
+				<Dots key={ index } id={item.id} state={item.state} dots={this.props.dots.dots} setDotState={this.props.actions.setDotState} /> 
 				)			
 		})
 
@@ -42,7 +42,7 @@ class App extends Component{
 						{ rows }
 					</tbody>
 				</table>
-				<Field initialSize={ this.props.dots.size } setFieldSize={ this.props.actions.setFieldSize }/>
+				<Field initialSize={ this.props.dots.size } setDots={ this.props.actions.setDots }/>
 			</div>
 		)
 	}

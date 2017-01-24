@@ -1,23 +1,18 @@
-export function setDotState(dotState) {
+import DotsService from "./../services/DotsService"
+import constants from "./../constants/DotsConstants"
+
+export function setDotState(dots) {
 
 	return {
-		type: "SET_DOT_STATE",
-		payload: dotState
-	}
-}
-
-export function setFieldSize(fieldSize) {
-
-	return {
-		type: "SET_FIELD_SIZE",
-		payload: fieldSize
+		type: constants.SET_DOT_STATE,
+		payload: dots
 	}
 }
 
 function setDotsAction(data) {
 
 	return {
-		type: "SET_DOTS",
+		type: constants.SET_DOTS,
 		payload: data	
 	}
 }
@@ -27,7 +22,6 @@ export function setDots(width, height) {
 	return (dispatch) => {
 		
 		let dots = DotsService.createDots(width, height);
-
 
 		dispatch(setDotsAction({
 			dots: dots,

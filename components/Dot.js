@@ -4,7 +4,15 @@ class Dot extends Component{
 
 	addDot() {
 
-		this.props.setDotState({ state : true, id : this.props.id })
+		let dots = this.props.dots.map((it) => {
+
+			if(it.id == this.props.id){
+				it.state = true
+			}
+			return it
+		})
+
+		this.props.setDotState(dots)
 	}
 
 	render(){
@@ -17,10 +25,11 @@ class Dot extends Component{
 	}
 }
 
-// Dot.propTypes ={
-
-// 	data: PropTypes.boolean.isRequired,
-// 	setDotState: PropTypes.func.isRequired
-// }
+Dot.propTypes = {
+	setDotState: React.PropTypes.func.isRequired,
+	id: React.PropTypes.string.isRequired,
+	state: React.PropTypes.bool.isRequired,
+	dots: React.PropTypes.array.isRequired
+}
 
 export default Dot
