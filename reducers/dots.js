@@ -6,19 +6,20 @@ let initialState = {
 }
 
 export default function userstate(state = initialState, action) {
-
+console.log(action.type);
 	switch (action.type) {
-		case constants.SET_DOT_STATE: {
-
+		case constants.SET_DOT_STATE: 
+		console.log(action.payload);
 			return Object.assign({}, state, {
-				dots: action.payload
+				dots: [
+					...action.payload
+				]
 			});
-		}
-		case constants.SET_DOTS: {
+		case constants.SET_DOTS: 
 
 			return Object.assign({}, state, 
 				action.payload);
-		}
+		
 		default : { return state }
 	}
 }

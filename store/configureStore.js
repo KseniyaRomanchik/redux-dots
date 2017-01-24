@@ -2,7 +2,7 @@ import { createStore, applyMiddleware } from "redux"
 import rootReducer from "../reducers"
 import thunk from "redux-thunk"
 
-export default function configureStore() {
+function configureStore() {
 
 	const store = createStore(rootReducer, applyMiddleware(thunk))
 
@@ -15,3 +15,7 @@ export default function configureStore() {
 	}
 	return store
 }
+
+const store = configureStore();
+
+export default store

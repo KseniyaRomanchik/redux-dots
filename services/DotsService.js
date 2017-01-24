@@ -1,5 +1,3 @@
-
-
 class DotsService {
 	static createDots(width, height) {
 
